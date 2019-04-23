@@ -9,6 +9,7 @@ describe('VideoList', function() {
   // only a single level deep. This isolates the component from it's children
   // See more: https://facebook.github.io/react/docs/test-utils.html#shallow-rendering
 
+
   it('should be a stateless functional component', function() {
     expect(React.Component.isPrototypeOf(VideoList)).to.be.false;
   });
@@ -33,7 +34,7 @@ describe('VideoList', function() {
     shallowRenderer.render(
       <VideoList videos={threeFakeVideos} />
     );
-    
+
     var videoList = shallowRenderer.getRenderOutput();
     expect(videoList.props.children).to.have.length(3);
     videoList.props.children.forEach(child => expect(child.type).to.equal(VideoListEntry));
@@ -46,7 +47,7 @@ describe('VideoList', function() {
     shallowRenderer.render(
       <VideoList videos={fiveFakeVideos} />
     );
-    
+
     var videoList = shallowRenderer.getRenderOutput();
     expect(videoList.props.children).to.have.length(5);
     videoList.props.children.forEach(child => expect(child.type).to.equal(VideoListEntry));
