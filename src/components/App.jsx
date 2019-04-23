@@ -1,5 +1,6 @@
 import exampleVideoData from '/src/data/exampleVideoData.js';
 import VideoList from './VideoList.js';
+import VideoPlayer from './VideoPlayer.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em> view goes here</h5></div>
+            <div><h5><VideoPlayer video={exampleVideoData[1]} /></h5></div>
           </div>
           <div className="col-md-5">
             <div><h5><VideoList videos={exampleVideoData} /></h5></div>
