@@ -1,5 +1,5 @@
 
-// import ReactDom from 'React';
 import App from './components/App.js';
+import exampleVideoData from './data/exampleVideoData.js';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App data={exampleVideoData} />, document.getElementById('app'));
