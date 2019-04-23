@@ -1,4 +1,5 @@
 import App from '../../src/components/App.js';
+import exampleVideoData from "./data/exampleVideoData.js";
 
 describe('App', function() {
   var {
@@ -12,7 +13,7 @@ describe('App', function() {
 
   beforeEach(function() {
     app = renderIntoDocument(
-      <App searchYouTube={() => {}}/>
+      <App searchYouTube={() => {}} data={exampleVideoData}/>
     );
   });
 
