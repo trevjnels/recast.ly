@@ -4,7 +4,7 @@ var searchYouTube = (options, callback) => {
   var { query, max, key } = options; 
 
   var fullURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${max}&order=viewCount&q=${query}&type=video&videoDefinition=high&key=${key}`;
-  console.log(fullURL)
+  console.log("WE SEARCHED YOUTUBE ", fullURL)
   $.get(fullURL, callback)
   return fullURL;
   // jQuery.get( url [, data ] [, success ] [, dataType ] )
