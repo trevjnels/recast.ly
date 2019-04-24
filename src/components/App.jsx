@@ -1,6 +1,8 @@
 import Search from './Search.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import YOUTUBE_API_KEY from '/compiled/config/youtube.js';
+import searchYouTube from '../lib/searchYouTube.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,18 +11,26 @@ class App extends React.Component {
       video: this.props.data[0]
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleClick(video) {
     this.setState({video});
   }
+  
+  handleSearch(query = "corgies") {
+    searchYouTube({query, key: YOUTUBE_API_KEY, max: 5}, function(data) {
+      // console.log(JSON.stringify(data));
+    });
+  }
 
+ 
   render () {
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5>Search Youtube<Search /></h5></div>
+            <div><h5>Search Youtube<Search search={this.handleSearch()}/></h5></div>
           </div>
         </nav>
         <div className="row">
