@@ -18,10 +18,12 @@ class App extends React.Component {
     this.setState({video});
   }
   
-  handleSearch(query = "corgies") {
-    searchYouTube({query, key: YOUTUBE_API_KEY, max: 5}, function(data) {
-      // console.log(JSON.stringify(data));
-    });
+  handleSearch(string = 'corgis') {
+    // console.log(string);
+    console.log('HELLO')
+    // searchYouTube({query, key: YOUTUBE_API_KEY, max: 5}, function(data) {
+    //   console.log(JSON.stringify(data));
+    // });
   }
 
  
@@ -30,7 +32,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5>Search Youtube<Search search={this.handleSearch()}/></h5></div>
+            <div><h5>Search Youtube<Search search={this.handleSearch}/></h5></div>
           </div>
         </nav>
         <div className="row">
